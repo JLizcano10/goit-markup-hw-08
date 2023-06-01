@@ -45,7 +45,7 @@
 
 // ------- Responsive ----------
 
-@media only screen and (max-width: 768px) {
+@include screen-768 {
   .client {
     &__title {
       margin-bottom: 30px;
@@ -64,7 +64,7 @@
   }
 }
 
-@media only screen and (max-width: 480px) {
+@include screen-480 {
   .client {
     &__item {
       width: 210px;
