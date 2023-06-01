@@ -1,0 +1,190 @@
+.booking-form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 14px;
+  width: 100%;
+  height: 100%;
+
+  &__group {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 4px;
+    width: 100%;
+  }
+
+  &__label {
+    font-weight: $regular-weight;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01;
+    color: $secondary-text-color;
+    transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__input:hover &__label,
+  &__input:focus &__label {
+    color: $accent-color;
+  }
+
+  &__label--check {
+    position: relative;
+    display: block;
+    padding-left: 24px;
+    font-weight: $regular-weight;
+    text-align: left;
+    line-height: 1.71;
+    color: $secondary-text-color;
+  }
+
+  &__input {
+    width: 100%;
+    padding: 12px 42px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      border: 1px solid $accent-color;
+    }
+  }
+
+  &__input--check {
+    position: absolute;
+
+    clip: rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+  }
+
+  &__input--check:checked + &__image {
+    border: none;
+    background-image: url(../images/revised.svg);
+    box-shadow: none;
+  }
+
+  &__input--check:focus + &__image {
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  }
+
+  &__input:hover + &__icon,
+  &__input:focus + &__icon {
+    fill: $accent-color;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    fill: $main-text-color;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      fill: $accent-color;
+    }
+  }
+
+  &__text {
+    width: 100%;
+    height: 120px;
+    padding: 12px 16px;
+    border: 1px solid rgba(33, 33, 33, 0.2);
+    border-radius: 4px;
+
+    outline: none;
+    resize: none;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+    &:hover,
+    &:focus {
+      border: 1px solid $accent-color;
+    }
+
+    &::placeholder {
+      color: rgba(117, 117, 117, 0.5);
+    }
+  }
+
+  &__check {
+    width: 425px;
+  }
+
+  &__image {
+    position: absolute;
+    left: 0;
+    top: 3.2px;
+    width: 16px;
+    height: 15px;
+    overflow: hidden;
+    border: 0.2px solid $main-text-color;
+    border-radius: 4px;
+    background-color: $main-white-color;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+
+    transition: background-image 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      border 250ms cubic-bezier(0.4, 0, 0.2, 1),
+      box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  &__btn {
+    padding: 10px 75px;
+    background-color: $accent-color;
+    font-family: $main-font;
+    font-weight: $bold-weight;
+    font-size: $secondary-size;
+    line-height: 1.87;
+    letter-spacing: 0.06;
+    color: $main-white-color;
+    border-radius: 4px;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: $accent-color-hover;
+    }
+  }
+}
+
+// ------- Responsive ----------
+@include screen-480 {
+  .booking-form {
+    &__group:hover &__label,
+    &__group:focus &__label {
+      color: $accent-color;
+    }
+
+    &__text {
+      &::placeholder {
+        font-size: 12px;
+        color: rgba(117, 117, 117, 0.5);
+      }
+    }
+
+    &__label--check {
+      line-height: 1.16;
+    }
+
+    &__check {
+      width: 370px;
+    }
+
+    &__image {
+      top: 0;
+    }
+  }
+}

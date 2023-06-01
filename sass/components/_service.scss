@@ -1,0 +1,73 @@
+.service {
+  &__list {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__item {
+    flex-basis: calc((100% - 90px) / 4);
+  }
+
+  &__box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    height: 120px;
+    background-color: $bg-gray;
+  }
+
+  &__icon {
+    width: 70px;
+    height: 70px;
+  }
+
+  &__title {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-weight: $bold-weight;
+    font-size: $main-size;
+    letter-spacing: $main-letter;
+    line-height: 1.14;
+    text-transform: uppercase;
+  }
+
+  &__text {
+    font-weight: $regular-weight;
+    font-size: $main-size;
+    letter-spacing: $main-letter;
+    line-height: 1.71;
+    color: $secondary-text-color;
+  }
+}
+
+// ------- Responsive ----------
+@include screen-768 {
+  .service {
+    &__list {
+      flex-wrap: wrap;
+    }
+
+    &__item {
+      width: 354px;
+      flex-basis: calc((100% - 30px) / 2);
+    }
+  }
+}
+
+@include screen-480 {
+  .service {
+    &__list {
+      flex-direction: column;
+    }
+
+    &__item {
+      width: 450px;
+    }
+
+    &__title {
+      text-align: center;
+    }
+  }
+}
