@@ -44,8 +44,8 @@
 }
 
 // ------- Responsive ----------
-
-@include screen-768 {
+// Para no repetir flex wrap no uso los mixins sino media queries que en comun compartiran dicha propiedad ya establecida hasta 1199px
+@media only screen and (max-width: 1199px) {
   .client {
     &__title {
       margin-bottom: 30px;
@@ -64,7 +64,7 @@
   }
 }
 
-@include screen-480 {
+@media only screen and (max-width: 767px) {
   .client {
     &__item {
       width: 210px;
