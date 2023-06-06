@@ -90,6 +90,10 @@
 
 @include screen-480 {
   .project {
+    flex-direction: column;
+    flex-wrap: nowrap;
+
+
     &__item {
       width: 450px;
       height: 404px;
