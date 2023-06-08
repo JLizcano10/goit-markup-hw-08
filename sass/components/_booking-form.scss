@@ -65,18 +65,18 @@
     margin: -1px;
   }
 
-  &__input--check:checked + &__image {
+  &__input--check:checked+&__image {
     border: none;
     background-image: url(../images/revised.svg);
     box-shadow: none;
   }
 
-  &__input--check:focus + &__image {
+  &__input--check:focus+&__image {
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
 
-  &__input:hover + &__icon,
-  &__input:focus + &__icon {
+  &__input:hover+&__icon,
+  &__input:focus+&__icon {
     fill: $accent-color;
   }
 
@@ -163,6 +163,7 @@
 // ------- Responsive ----------
 @include screen-480 {
   .booking-form {
+
     &__group:hover &__label,
     &__group:focus &__label {
       color: $accent-color;
